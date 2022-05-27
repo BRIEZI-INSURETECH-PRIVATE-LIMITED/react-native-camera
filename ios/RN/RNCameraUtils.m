@@ -117,7 +117,7 @@
     } else if (curOrientation == UIInterfaceOrientationLandscapeRight){
         orientationToApply = isBackCamera ? kCGImagePropertyOrientationUp  : kCGImagePropertyOrientationDownMirrored;
     } else if (curOrientation == UIInterfaceOrientationPortrait){
-        orientationToApply = isBackCamera ? kCGImagePropertyOrientationRight : kCGImagePropertyOrientationLeftMirrored;
+        orientationToApply = isBackCamera ? kCGImagePropertyOrientationRight : UIImageOrientationLeftMirrored;
     } else if (curOrientation == UIInterfaceOrientationPortraitUpsideDown){
         orientationToApply = isBackCamera ? kCGImagePropertyOrientationLeft : kCGImagePropertyOrientationRightMirrored;
     }
