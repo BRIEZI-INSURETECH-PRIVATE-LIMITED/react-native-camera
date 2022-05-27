@@ -226,8 +226,9 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Vo
     newBounds.putMap("origin", translatedMirroredOrigin);
 
     text.putMap("bounds", newBounds);
-
+    if(text.hasKey("components")){
     ReadableArray oldComponents = text.getArray("components");
+    if(String.valueOf(oldComponents) != null){
     WritableArray newComponents = Arguments.createArray();
     for (int i = 0; i < oldComponents.size(); ++i) {
       WritableMap component = Arguments.createMap();
@@ -236,7 +237,11 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Vo
       newComponents.pushMap(component);
     }
     text.putArray("components", newComponents);
-
+    }
+    } else {
+       Log.e("SARAVANAKUMAR", "No Key");
+    }
+  
     return text;
   }
 
